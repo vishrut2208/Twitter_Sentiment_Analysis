@@ -6,7 +6,7 @@ import json
 from textblob import TextBlob
 
 
-
+# for cleaning the tweets of emoticons and non textual data
 def clean_tweet(tweet):
 	'''
 	Function to remove emoticons and other non textual data from the tweet
@@ -14,22 +14,6 @@ def clean_tweet(tweet):
 
 	return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", tweet).split())
 
-
-# def get_sentiment(tweet_json):
-#
-#     result = TextBlob(tweet_json)
-#
-#     sentiment_polarity = result.sentiment.polarity
-#
-#     if (sentiment_polarity > 0):
-#         result = result + ' - positive'
-#         return result
-#     elif (sentiment_polarity == 0):
-#         result = result + ' - neutral'
-#         return result
-#     else:
-#         result = result + ' - negative'
-#         return result
 
 def main():
     '''
